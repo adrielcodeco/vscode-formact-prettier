@@ -1,0 +1,126 @@
+{
+  "name": "formact-prettier",
+  "private": true,
+  "displayName": "Formact - Prettier",
+  "version": "1.0.7",
+  "publisher": "codeco",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adrielcodeco/vscode-formact-prettier"
+  },
+  "bugs": {
+    "url": "https://github.com/adrielcodeco/vscode-formact-prettier/issues"
+  },
+  "engines": {
+    "vscode": "^1.43.0",
+    "node": ">=10.x"
+  },
+  "categories": [
+    "Formatters"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "icon": "icon.png",
+  "main": "./#/extension.js",
+  "contributes": {
+    "configuration": [
+      {
+        "title": "formact",
+        "properties": {
+          "formact.languages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": [
+              "javascript",
+              "typescript",
+              "json"
+            ],
+            "description": "List of languages that will accept actions",
+            "scope": "window"
+          },
+          "formact.actions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of actions that will be executed",
+            "scope": "window"
+          }
+        }
+      }
+    ],
+    "commands": [
+      {
+        "title": "Format code with prettier",
+        "category": "Formact",
+        "command": "source.format.prettier"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "webpack",
+    "check:spelling": "cspell --config=.cspell.json \"**/*.{md,ts,js}\"",
+    "commit": "git-cz",
+    "deploy": "vsce publish --yarn -p ${VSCE_PAT}",
+    "lint": "eslint . --ext .js,.ts",
+    "lint:fix": "eslint . --ext .js,.ts --fix",
+    "lint:markdown:fix": "lint:markdown --fix",
+    "lint:markdown": "markdownlint '**/*.md' --ignore-path=.markdownlintignore",
+    "test": "echo \"No test specified\" && exit 0",
+    "typecheck": "ttsc -p ./",
+    "validations": "yarn lint && yarn lint:markdown && yarn check:spelling && yarn typecheck && yarn test",
+    "package": "vsce package && yarn cpy '*.vsix' 'releases'",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/exec": "^5.0.0",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/github": "^7.1.1",
+    "@types/node": "^14.10.1",
+    "@types/prettier": "^2.1.1",
+    "@types/vscode": "1.43",
+    "@typescript-eslint/eslint-plugin": "^4.1.0",
+    "@typescript-eslint/parser": "^4.1.0",
+    "@zerollup/ts-transform-paths": "^1.7.18",
+    "cpy-cli": "^3.1.1",
+    "cross-env": "^7.0.2",
+    "cspell": "^4.1.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.9.0",
+    "eslint-config-standard-with-typescript": "^19.0.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "^4.3.0",
+    "markdownlint-cli": "^0.23.2",
+    "prettier": "^2.1.2",
+    "semantic-release": "^17.1.1",
+    "semantic-release-cli": "^5.4.0",
+    "ts-loader": "^8.0.4",
+    "tsconfig-paths-webpack-plugin": "^3.3.0",
+    "ttypescript": "^1.5.12",
+    "typescript": "^4.0.2",
+    "vsce": "^1.79.5",
+    "vscode-extensions-logging": "^1.0.4",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn validations",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}

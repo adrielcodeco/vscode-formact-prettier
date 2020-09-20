@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "language": "en",
+  "ignorePaths": [
+    ".cspell.json",
+    "**/node_modules/**",
+    "*.d.ts",
+    "**/#/**",
+    "**/coverage/**",
+    "**/tests/**",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "dictionaries": [
+    "typescript",
+    "softwareTerms",
+    "node",
+    "en_US",
+    "npm",
+    "misc",
+    "filetypes",
+    "bash"
+  ],
+  "words": ["formact", "devtool"]
+}
