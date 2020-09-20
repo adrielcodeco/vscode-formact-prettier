@@ -17,4 +17,14 @@ You can install this extension by one of the following options
 
 ## How to use it _?_
 
-This extensions add an action tha can be called in vscode command (Crtl+Shift+p) and can be used with [formact extension](https://github.com/adrielcodeco/vscode-formact)
+This extensions add an action that can be called in vscode command (Crtl+Shift+p)
+
+![command](assets/formact.command.png)
+
+Can be used with [formact extension](https://github.com/adrielcodeco/vscode-formact) passing `source.format.prettier` action
+
+![formact config](assets/formact.config.png)
+
+Or can be used on `editor.codeActionsOnSave` passing `source.format.prettier` action
+
+![editor.codeActionsOnSave](assets/codeActionsOnSave.png)
