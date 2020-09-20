@@ -21,10 +21,10 @@ This extensions add an action that can be called in vscode command (Crtl+Shift+p
 
 ![command](assets/formact.command.png)
 
-Can be used with [formact extension](https://github.com/adrielcodeco/vscode-formact) passing `source.format.prettier` action
+Can be used with [formact extension](https://github.com/adrielcodeco/vscode-formact) passing `formact.prettier.format` action
 
 ![formact config](assets/formact.config.png)
 
-Or can be used on `editor.codeActionsOnSave` passing `source.format.prettier` action
+Or can be used on `editor.codeActionsOnSave` passing `formact.prettier.format` action
 
 ![editor.codeActionsOnSave](assets/codeActionsOnSave.png)

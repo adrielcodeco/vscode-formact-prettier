@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/no-floating-promises */
 import * as vscode from 'vscode'
+import * as util from 'util'
 import { ExtensionsLogging } from 'vscode-extensions-logging'
 import prettier from 'prettier'
 
 const EXTENSION_ID = 'formact-prettier'
-const formatCommandKey = 'source.format.prettier'
+const formatCommandKey = 'formact.prettier.format'
 
 export function activate (context: vscode.ExtensionContext) {
   try {
@@ -39,12 +40,15 @@ export function activate (context: vscode.ExtensionContext) {
         logger.info(`language not found for file: ${fileName}`)
         return
       }
+      logger.info(`using language: ${document.languageId}`)
       const parser = language.parsers[0]
       if (!parser) {
         logger.info(`parser not found for file: ${fileName}`)
         return
       }
+      logger.info(`using parser: ${parser}`)
       const options = await prettier.resolveConfig(fileName)
+      logger.info(`using options: ${util.inspect(options, false, 5, false)}`)
       const formattedCode = prettier.format(
         code,
         Object.assign({}, options, {

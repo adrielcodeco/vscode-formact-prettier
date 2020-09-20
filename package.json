@@ -56,7 +56,7 @@
       {
         "title": "Format code with prettier",
         "category": "Formact",
-        "command": "source.format.prettier"
+        "command": "formact.prettier.format"
       }
     ]
   },
