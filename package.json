@@ -2,7 +2,7 @@
   "name": "formact-prettier",
   "private": true,
   "displayName": "Formact - Prettier",
-  "version": "1.0.7",
+  "version": "1.0.0",
   "publisher": "codeco",
   "repository": {
     "type": "git",
