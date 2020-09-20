@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/adrielcodeco/vscode-formact-prettier/compare/v1.0.0...v1.0.1) (2020-09-20)
+
+
+### Bug Fixes
+
+* readme.md usage info ([0f03568](https://github.com/adrielcodeco/vscode-formact-prettier/commit/0f03568a6c1db0811f9225f2cd45bd75cbaa7d96))
+
 # 1.0.0 (2020-09-20)
 
 
