@@ -101,7 +101,7 @@
     "husky": "^4.3.0",
     "markdownlint-cli": "^0.23.2",
     "prettier": "^2.1.2",
-    "semantic-release": "^17.1.1",
+    "semantic-release": "^17.3.9",
     "semantic-release-cli": "^5.4.0",
     "ts-loader": "^8.0.4",
     "tsconfig-paths-webpack-plugin": "^3.3.0",
